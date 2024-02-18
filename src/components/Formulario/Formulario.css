@@ -1,0 +1,28 @@
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  max-width: 100%;
+  
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 15px;
+  margin-left: 6px;
+  
+}
+.button {
+  width: 180px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 15px;
+  margin-left: 6px;
+  background-color: #aeacac;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+}

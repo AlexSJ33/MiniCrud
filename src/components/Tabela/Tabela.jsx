@@ -5,14 +5,15 @@ function Tabela() {
     <>
     <div>
       <table>
-        <tr>
+        <thead>
           <th>ID</th>
           <th>Nome</th>
           <th>Email</th>
           <th>Telefone</th>
           <th>Setor</th>
           <th>Ação</th>
-        </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>1</td>
           <td>Zé da Manga</td>
@@ -37,6 +38,7 @@ function Tabela() {
           <td>T.I</td>
           <td><button className="btnRemove">Remover</button></td>
         </tr>
+        </tbody>
       </table>
     </div>
     </>

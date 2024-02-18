@@ -3,12 +3,12 @@ import "./Formulario.css"
 function Formulario() {
   return (
     <>
-    <form onSubmit="" class="form">
-      <input type="text" id="nome" placeholder="Nome" class="inputs" />
-      <input type="email" id="email" placeholder="Email" class="inputs" />
-      <input type="text" id="telefone" placeholder="Telefone" class="inputs" />
-      <input type="text" id="setor" placeholder="Setor" class="inputs" />
-      <input type="submit" value="Enviar" class="button"/>
+    <form onSubmit="" className="form">
+      <input type="text" id="nome" placeholder="Nome" className="inputs" />
+      <input type="email" id="email" placeholder="Email" className="inputs" />
+      <input type="text" id="telefone" placeholder="Telefone" className="inputs" />
+      <input type="text" id="setor" placeholder="Setor" className="inputs" />
+      <input type="submit" value="Enviar" className="button"/>
     </form>
     </>
   

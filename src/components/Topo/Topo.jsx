@@ -3,9 +3,9 @@ import "./Topo.css"
 function Topo() {
   return (
     <>
-    <div class="container">
-      <div class="topo">
-        <p class="title">Cadastro de Funcionários</p>
+    <div className="container">
+      <div className="topo">
+        <p className="title">Cadastro de Funcionários</p>
       </div>
     
     </div>

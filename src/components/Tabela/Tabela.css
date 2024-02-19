@@ -13,7 +13,7 @@ table {
 td, th {
   width: 180px;
   max-width: 100%;
-  border: 1px solid #dddddd;
+  border: 1px solid #f1efef;
   text-align: left;
   padding: 8px;
   
@@ -34,9 +34,28 @@ tr:nth-child(even) {
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 80px;
   height: 25px;
-  background-color: #f2e7ef;
+  background-color: red;
   cursor: pointer;
   font-weight: bold;
-  color: red;
+  color: white;
+}
+.btnEdit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: 25px;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+.btn {
+  display: flex;
+  justify-content: space-around;
+  
+  gap: 5px;
 }

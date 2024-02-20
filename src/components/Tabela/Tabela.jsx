@@ -1,6 +1,13 @@
 import "./Tabela.css"
 
+
+import { useFetchDocs } from "../../hooks/useFetchDocs";
+
 function Tabela() {
+
+  const { documents } = useFetchDocs("Funcionarios");
+
+  console.log(documents)
   return (
     <>
  
@@ -16,12 +23,14 @@ function Tabela() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Zé da Manga</td>
-            <td>ze@gmail.com</td>
-            <td>99 33221195</td>
-            <td>R.H</td>
+          
+          {documents?.map((doc, index) => (
+            <tr key={index}>
+            <td>{doc.id}</td>
+            <td>{doc.name}</td>
+            <td>{doc.email}</td>
+            <td>{doc.phone}</td>
+            <td>{doc.setor}</td>
             <td>
             <div className="btn">
               <button className="btnEdit">Editar</button>
@@ -29,32 +38,9 @@ function Tabela() {
             </div>
             </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Joãozinho</td>
-            <td>joao@gmail.com</td>
-            <td>35 88225588</td>
-            <td>Logistica</td>
-            <td>
-            <div className="btn">
-              <button className="btnEdit">Editar</button>
-              <button className="btnRemove">Remover</button>
-            </div>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Francisco</td>
-            <td>francisco@gmail.com</td>
-            <td>11 99887755</td>
-            <td>T.I</td>
-            <td>
-              <div className="btn">
-              <button className="btnEdit">Editar</button>
-              <button className="btnRemove">Remover</button>
-              </div>
-            </td>
-          </tr>
+          ))}
+
+          
         </tbody>
       </table>
     

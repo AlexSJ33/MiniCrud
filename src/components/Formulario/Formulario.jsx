@@ -16,11 +16,13 @@ function Formulario() {
   const { documents } = useFetchDocs("Funcionarios");
 
   useEffect(() => {
+
     if(documents) {
            setCount(documents.length)
            console.log(documents.length)
            
-           setCount((actualCount) => actualCount = (documents.length + 1));
+           setCount((actualCount) => actualCount + 1);
+           console.log(documents.length)
     }
 }, [])
   

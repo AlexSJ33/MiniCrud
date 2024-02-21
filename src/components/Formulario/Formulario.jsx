@@ -1,31 +1,43 @@
 import "./Formulario.css"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInsertDoc } from "../../hooks/useInsertDoc";
+import { useFetchDocs } from "../../hooks/useFetchDocs";
+
 
 function Formulario() {
-  const [id, setId] = useState(0);
+  const [count, setCount] = useState(1);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone,setPhone] = useState("");
   const [setor, setSetor] = useState("");
 
   const { insertDoc } = useInsertDoc("Funcionarios")
+  const { documents } = useFetchDocs("Funcionarios");
 
+  useEffect(() => {
+    if(documents) {
+           setCount(documents.length)
+           console.log(documents.length)
+           
+           setCount((actualCount) => actualCount = (documents.length + 1));
+    }
+}, [])
+  
+  
   const handleInsert = (e) => {
+    
     e.preventDefault();
+    
     const newFuncionario = {
-      id,
+      count,
       name,
       email,
       phone,
       setor,
     };
-
-    insertDoc(newFuncionario);
-
-    setId((actualId) => actualId + 1);
     
+    insertDoc(newFuncionario);  
     
     setName("");
     setEmail("");
@@ -33,8 +45,9 @@ function Formulario() {
     setSetor("");
     
     console.log(newFuncionario)
-
+    
   }
+
 
   return (
     <>

@@ -4,20 +4,26 @@ import "./Tabela.css"
 
 import { useFetchDocs } from "../../hooks/useFetchDocs";
 import { useDeleteDoc } from "../../hooks/useDeleteDoc";
+import { useUpdateDoc } from "../../hooks/useUpdateDoc";
 
 function Tabela() {
 
   const { documents } = useFetchDocs("Funcionarios");
   const { deleteOrder } = useDeleteDoc("Funcionarios");
-
-  
-  console.log(documents)
+  const { updateOrder } = useUpdateDoc("Funcionarios");
 
   const handleDelete = (id) => {
     deleteOrder(id)
     
     console.log(id)
   };
+
+  const handleEdit = (id) => {
+    updateOrder(id)
+    
+    console.log("função editar",id)
+  };
+
 
   return (
     <>
@@ -44,7 +50,9 @@ function Tabela() {
             <td>{doc.setor}</td>
             <td>
             <div className="btn">
-              <button className="btnEdit">Editar</button>
+              <button className="btnEdit"
+              onClick={() => handleEdit([doc.count,doc.name, doc.email,doc.phone,doc.setor])}
+              >Editar</button>
               <button className="btnRemove"
               onClick={() => handleDelete(doc.id)}
               >Remover</button>

@@ -11,22 +11,22 @@ function Formulario() {
   const [email, setEmail] = useState("");
   const [phone,setPhone] = useState("");
   const [setor, setSetor] = useState("");
-
+  
   const { insertDoc } = useInsertDoc("Funcionarios")
   const { documents } = useFetchDocs("Funcionarios");
 
+
   useEffect(() => {
 
-    if(documents) {
-           setCount(documents.length)
-           console.log(documents.length)
-           
-           setCount((actualCount) => actualCount + 1);
-           console.log(documents.length)
-    }
-}, [])
+    
+    setCount(documents?.length > 0 ? documents?.length + 1 : 1);
+    
+    
+  }, [documents])
   
-  
+
+  console.log(count)
+
   const handleInsert = (e) => {
     
     e.preventDefault();
@@ -47,6 +47,7 @@ function Formulario() {
     setSetor("");
     
     console.log(newFuncionario)
+    
     
   }
 
@@ -88,7 +89,6 @@ function Formulario() {
       <input type="submit" value="Enviar" className="button"/>
     </form>
     </>
-  
       
   )
 }

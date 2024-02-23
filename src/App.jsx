@@ -11,8 +11,8 @@ function App() {
   return (
   <>
     <Topo />
-    <Formulario />
-    <Tabela />
+    {/* <Formulario />
+    <Tabela /> */}
   </>
   )
 }

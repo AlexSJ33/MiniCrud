@@ -25,3 +25,124 @@
   font-size: 22px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  max-width: 100%;
+  
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 15px;
+  margin-left: 6px;
+  
+}
+.btnEnviar {
+  width: 180px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 15px;
+  margin-left: 6px;
+  background-color: #aeacac;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.btnSalvar {
+  width: 180px;
+  max-width: 100%;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 15px;
+  margin-left: 6px;
+  background-color: #20ca37;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: arial, sans-serif;
+  max-width: 100%;
+  padding: 30px;
+  
+}
+
+td, th {
+  width: 180px;
+  max-width: 100%;
+  border: 1px solid #f1efef;
+  text-align: left;
+  padding: 8px;
+  
+}
+th {
+  background-color: #8E44AD;
+  color: #ffff;
+  text-align: center;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+
+}
+.btnRemove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: 25px;
+  background-color: red;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+.btnEdit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: 25px;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+.ImCancelCircle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80px;
+  height: 25px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 100%;
+  
+  
+  
+  
+}
+.ImCancelCircle svg {
+  background-color: transparent;
+  color: red;
+}
+.btn {
+  display: flex;
+  justify-content: space-around;
+  
+  gap: 5px;
+}

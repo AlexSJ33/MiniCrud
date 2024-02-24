@@ -94,9 +94,9 @@ function Topo() {
 
     const phoneMask = (value) => {
       if (!value) return ""
-      value = value.replace(/\D/g,'')
-      value = value.replace(/(\d{2})(\d)/,"($1) $2")
-      value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+      value = value.replace(/\D/g,""); //Remove tudo o que não é dígito
+      value = value.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+      value = value.replace(/(\d)(\d{3})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
       return value
     }
 
@@ -152,7 +152,7 @@ function Topo() {
         required
         onChange={(e) => setEmail(e.target.value)} />
         <input
-        type="tel"
+        type="text"
         maxLength="15"
         id="telefone"
         placeholder="Telefone"

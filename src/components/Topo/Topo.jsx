@@ -1,7 +1,7 @@
 import "./Topo.css"
 //------------- importação de coleções ---------------------
 import { useState, useEffect } from "react";
-import { ImCancelCircle } from "react-icons/im";
+
 
 import { useFetchDocs } from "../../hooks/useFetchDocs";
 import { useDeleteDoc } from "../../hooks/useDeleteDoc";
@@ -132,14 +132,14 @@ function Topo() {
   return (
     <>
     <div className="container">
-      <div className="topo">
-        <p className="title">Cadastro de Funcionários</p>
+      <div className={edit ? 'topo2' : 'topo'}>
+        <p className={edit ? 'title2' : 'title'}>{edit ? 'Modo de Edição' : 'Cadastro de Funcionários'}</p>
       </div>
       <form onSubmit={handleInsert} className="form">
         <input type="text"
         id="name"
         placeholder="Nome"
-        className="inputs"
+        className={edit ? 'inputs2' : 'inputs'}
         value = {name}
         required
         onChange={(e) => setName(e.target.value)}  />
@@ -147,7 +147,7 @@ function Topo() {
         type="email"
         id="email"
         placeholder="Email"
-        className="inputs"
+        className={edit ? 'inputs2' : 'inputs'}
         value={email}
         required
         onChange={(e) => setEmail(e.target.value)} />
@@ -156,7 +156,7 @@ function Topo() {
         maxLength="15"
         id="telefone"
         placeholder="Telefone"
-        className="inputs"
+        className={edit ? 'inputs2' : 'inputs'}
         value={phone}
         required
         onKeyUp={handlePhone}
@@ -165,7 +165,7 @@ function Topo() {
         type="text"
         id="setor"
         placeholder="Setor"
-        className="inputs"
+        className={edit ? 'inputs2' : 'inputs'}
         value={setor}
         required
         onChange={(e) => setSetor(e.target.value)} />
@@ -193,10 +193,10 @@ function Topo() {
             <td>{doc.setor}</td>
             <td>
             <div className="btn">
-              <button className={edit && editId === doc.id ? 'ImCancelCircle' : 'btnEdit'}
+              <button className={edit && editId === doc.id ? 'btnCancel' : 'btnEdit'}
               onClick={() => handleEdit(doc)}
               
-              >{edit && editId === doc.id ? <ImCancelCircle /> : 'Editar'}</button>
+              >{edit && editId === doc.id ? 'Cancelar' : 'Editar'}</button>
               <button className="btnRemove"
               onClick={() => handleDelete(doc.id)}
               >Remover</button>

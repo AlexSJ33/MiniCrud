@@ -1,5 +1,5 @@
 import "./Topo.css"
-//------------- importação de coleções ---------------------
+//------------- importação de Coleções ---------------------
 import { useState, useEffect } from "react";
 
 
@@ -39,7 +39,7 @@ function Topo() {
 
   console.log(count)
 
-//--------------Inserir novo cadastro-----------------------  
+//--------------Inserir Novo Cadastro-----------------------  
   const handleInsert = (e) => {
     
     e.preventDefault();
@@ -76,17 +76,19 @@ function Topo() {
     setSetor("");
     
   }
-//--------------------Fim Inserir novo cadastro--------------
+//--------------------Fim Inserir Novo Cadastro--------------
 
-//--------------------Deletar cadastro-----------------------  
+
+//--------------------Deletar Cadastro-----------------------  
     const handleDelete = (id) => {
       deleteOrder(id)
       
       console.log(id)
     };
-//---------------------Fim Deletar cadastro--------------------- 
+//---------------------Fim Deletar Cadastro--------------------- 
 
-//--------------------Mascara campo Telefone---------------------  
+
+//--------------------Mascara Campo Telefone---------------------  
     const handlePhone = (event) => {
       let input = event.target
       input.value = phoneMask(input.value)
@@ -102,7 +104,8 @@ function Topo() {
 
 //-------------------- Fim Mascara campo Telefone----------------  
 
-//--------------------Editar cadastro-----------------------   
+
+//--------------------Editar Cadastro-----------------------   
     const handleEdit = (doc) => {
 
       if(!edit || doc.id !== editId) {
@@ -126,7 +129,7 @@ function Topo() {
   }, [funcionario])
 
   console.log(funcionario)
-//-------------------Fim Editar cadastro---------------------- 
+//-------------------Fim Editar Cadastro---------------------- 
 
 
   return (
